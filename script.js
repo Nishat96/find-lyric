@@ -37,6 +37,8 @@ function getSongName(){
 }
 
 function getLyrics(artist, title){
+    document.getElementById('fancy-result').style.display = 'none';
+   
     fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
     .then(res => res.json())
     .then(data =>
