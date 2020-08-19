@@ -15,14 +15,18 @@ function getSongName(){
             const element = song[i];
             const title = element.title;
             const artist = element.artist.name;
+            const image =  element.artist.picture_small;
             // document.getElementById('song-name').innerText = `${title}`;
             // document.getElementById('artist-name').innerText = `${artist}`;
 
             document.getElementById('fancy-result').innerHTML += `
             <div class="single-result row align-items-center my-3 p-3">
-                    <div class="col-md-9">
+                    <div class="col-md-2">
+                    <img class="img-thumbnail" src="${image}" alt="Cover Picture">
+                    </div>
+                    <div class="col-md-7">
                         <h3 id="song-name" class="lyrics-name">${title}</h3>
-                        <p class="author lead">Album by <span>${artist}</span></p>
+                        <p style="font-size:13px" class="author lead">Album by <span>${artist}</span></p>
                     </div>
                     <div class="col-md-3 text-md-right text-center">
                         <button onclick="getLyrics('${artist}', '${title}')" class="btn btn-success">Get Lyrics</button>
